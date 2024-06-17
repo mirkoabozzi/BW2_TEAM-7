@@ -11973,7 +11973,7 @@ svg {
 }
 
 #header {
-  top: 35px;
+  top: 16px;
 }
 
 #socialContainer {
@@ -11982,4 +11982,5 @@ svg {
 
 #main {
   margin-bottom: 100px;
+  overflow: auto;
 }/*# sourceMappingURL=style.css.map */

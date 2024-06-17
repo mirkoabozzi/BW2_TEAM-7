@@ -12,7 +12,7 @@ svg{
     top: 135px;
 }
 #header{
-    top:35px;
+    top:16px;
 }
 
 #socialContainer{
@@ -21,4 +21,6 @@ svg{
 
 #main{
     margin-bottom: 100px;
+    // height: 100vh;
+    overflow: auto;
 }
