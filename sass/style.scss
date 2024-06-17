@@ -1,1 +1,24 @@
-@import "./partials/bootsrap-override"
+@import "./partials/bootsrap-override";
+
+svg{
+    fill:#A7A7A7
+    
+}
+
+#homeContainer{
+    top:16px;
+}
+#libreryContainer{
+    top: 135px;
+}
+#header{
+    top:35px;
+}
+
+#socialContainer{
+    top:16px;
+}
+
+#main{
+    margin-bottom: 100px;
+}
