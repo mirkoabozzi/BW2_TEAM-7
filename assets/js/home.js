@@ -17,17 +17,28 @@ window.addEventListener("DOMContentLoaded", async () => {
     let songIndex = [];
 
     for (let index = 0; index <= 5; index++) {
-      // let randomSong = Math.floor(Math.random() * songs.length) + 1;
-      let randomSong = 1;
+       let randomSong = Math.floor(Math.random() * songs.length) + 1;
+      //let randomSong = 1;
 
       const verifyIndex = () => {
+        let check;
         songIndex.forEach((element) => {
           if (element === randomSong) {
-            randomSong;
+            randomSong=Math.floor(Math.random() * songs.length) + 1;
+            check++;
           }
         });
+        return check;
       };
+      
+      do {
+        verifyIndex();
+      } while (verifyIndex()===0);
+
+      console.log(randomSong);
+  
       songIndex.push(randomSong);
+      console.log(songIndex);
 
       const song = songs[randomSong];
 
@@ -68,6 +79,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       row.appendChild(col);
     }
+    songIndex=[];
   } catch (error) {
     console.error(error);
   }
