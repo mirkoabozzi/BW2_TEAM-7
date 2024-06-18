@@ -1,0 +1,33 @@
+@import "./partials/bootsrap-override";
+
+svg {
+  fill: #a7a7a7;
+}
+
+#play {
+  fill: black;
+}
+
+#homeContainer {
+  top: 16px;
+}
+#libreryContainer {
+  top: 135px;
+}
+#header {
+  top: 16px;
+}
+
+#socialContainer {
+  top: 16px;
+}
+
+#main {
+  margin-bottom: 100px;
+  // height: 100vh;
+  overflow: auto;
+}
+
+span {
+  color: grey;
+}

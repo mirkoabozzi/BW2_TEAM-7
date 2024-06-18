@@ -11964,6 +11964,10 @@ svg {
   fill: #a7a7a7;
 }
 
+#play {
+  fill: black;
+}
+
 #homeContainer {
   top: 16px;
 }
@@ -11987,4 +11991,4 @@ svg {
 
 span {
   color: grey;
-}/*# sourceMappingURL=homeStyle.css.map */
+}/*# sourceMappingURL=albumStyle.css.map */
