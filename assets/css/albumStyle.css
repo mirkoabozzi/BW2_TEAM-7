@@ -11989,14 +11989,10 @@ svg {
 }
 
 #main {
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   overflow: auto;
 }
 
 span {
   color: grey;
-}
-
-#main {
-  margin-bottom: 77px;
 }/*# sourceMappingURL=albumStyle.css.map */
