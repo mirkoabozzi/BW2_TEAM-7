@@ -1,0 +1,113 @@
+@import "./partials/bootsrap-override";
+
+// homestyle.scss
+
+svg {
+    fill: #A7A7A7
+}
+
+#homeContainer {
+    top: 16px;
+}
+
+#libreryContainer {
+    top: 135px;
+}
+
+#header {
+    top: 16px;
+}
+
+#socialContainer {
+    top: 16px;
+}
+
+#main {
+    margin-bottom: 100px;
+    // height: 100vh;
+    overflow: auto;
+}
+
+// search.scss
+
+#input-search {
+    max-width: 35%;
+}
+
+#input-search:hover {
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .2)
+}
+
+#search-section {
+    .card-img-top {
+        cursor: pointer;
+    }
+
+    .card {
+        border: none;
+    }
+
+}
+
+.aside-search {
+    max-width: 6rem;
+
+}
+
+#aside-scrollbar {
+    top: 135px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+svg:hover {
+    fill: white;
+    cursor: pointer;
+}
+
+.hover-white:hover {
+    color: white;
+    cursor: pointer;
+}
+
+// playlist.scss
+
+#main-playlist {
+//    .container-playlist {
+//     max-height: 20rem;
+//    }
+.play-playlist {
+    fill: black;
+    background-color: #1ED760;
+}
+
+#playlist-name{
+    font-size: 4rem;
+    font-weight: 600;
+
+}
+
+}
+
+table{
+    background-color: $table-bg;
+    
+ .row-bg:hover {
+     background-color: #2F2F2F;
+     cursor: pointer;
+ }
+
+  .row-bg {
+      transition: background-color 0.3s;
+  }
+
+  .row-bg:hover {
+       background-color: $my-custom-table-hover-color;
+       cursor: pointer;
+       /* Cambia il cursore al passaggio del mouse */
+   }
+}
+
+.svgPlay {
+      display: none;
+  }
