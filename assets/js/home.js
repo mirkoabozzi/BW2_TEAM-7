@@ -4,22 +4,20 @@ const url3 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=wade";
 const url4 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=paco_osuna";
 const url5 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=low_steppa";
 const url6 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=italobros";
+const url7 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=gigi_d'agostinos";
+const url8 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=purple_disco_machine";
+const url9 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=avicii";
+const url10 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=robbie_rivera";
+const url11 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=essed";
 
-const artistArray = [url, url2, url3, url4, url5, url6];
+const artistArray = [url, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11];
 
 const albumUrl = "https://deezerdevs-deezer.p.rapidapi.com/album/75621062";
 const albumUrl2 = "https://deezerdevs-deezer.p.rapidapi.com/album/299931";
 const albumUrl3 = "https://deezerdevs-deezer.p.rapidapi.com/album/299782827";
-const albumUrl4 = "https://deezerdevs-deezer.p.rapidapi.com/album/10901704";
+const albumUrl4 = "https://deezerdevs-deezer.p.rapidapi.com/album/548735872";
 const albumUrl5 = "https://deezerdevs-deezer.p.rapidapi.com/album/545453842";
 const albumUrl6 = "https://deezerdevs-deezer.p.rapidapi.com/album/584357862";
-
-const albumArtist = "https://deezerdevs-deezer.p.rapidapi.com/artist/14069";
-const albumArtist2 = "https://deezerdevs-deezer.p.rapidapi.com/artist/14069";
-const albumArtist3 = "https://deezerdevs-deezer.p.rapidapi.com/artist/14069";
-const albumArtist4 = "https://deezerdevs-deezer.p.rapidapi.com/artist/14069";
-const albumArtist5 = "https://deezerdevs-deezer.p.rapidapi.com/artist/14069";
-const albumArtist6 = "https://deezerdevs-deezer.p.rapidapi.com/artist/14069";
 
 const playlistArray = [25, 50, 1220, 2500, 5650, 6500, 3250, 4760, 450, 9850];
 
@@ -32,6 +30,8 @@ const randomPlaylists = (array) => {
 const row1 = document.getElementById("row1");
 const row2 = document.getElementById("row2");
 const row3 = document.getElementById("row3");
+const row4 = document.getElementById("row4");
+
 const playlistRow = document.getElementById("playlistRow");
 
 fetchAlbum = async (albumUrl, options, row) => {
@@ -319,7 +319,7 @@ fetchPlaylist = async (options) => {
 };
 
 fetchArtist = async (artistArray, options, row) => {
-  for (let index = 0; index < artistArray.length; index++) {
+  for (let index = 0; index <= 5; index++) {
     const response = await fetch(artistArray[index], options);
     const currentArtist = await response.json();
 
@@ -402,6 +402,90 @@ fetchArtist = async (artistArray, options, row) => {
   }
 };
 
+fetchArtist2 = async (artistArray, options, row) => {
+  for (let index = 5; index <= artistArray.length; index++) {
+    const response = await fetch(artistArray[index], options);
+    const currentArtist = await response.json();
+
+    console.log("currentArtiast", currentArtist);
+
+    const col = document.createElement("div");
+    col.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
+    // if (index === 5) {
+    //   col.classList.add("d-lg-none");
+    // }
+    // if (index === 4) {
+    //   col.classList.add("d-md-none");
+    // }
+
+    if (index === 9) {
+      col.classList.add("hide-on-xl");
+      // console.log("saaaaaas");
+    }
+    if (index === 8) {
+      col.classList.add("hide-on-lg");
+    }
+    if (index === 7) {
+      col.classList.add("hide-on-md");
+    }
+    if (index === 6) {
+      col.classList.add("hide-on-sm");
+    }
+
+    const card = document.createElement("div");
+    card.classList.add("border-0");
+    card.style.cursor = "pointer";
+    // card.style.width = "180px";
+
+    const divPic = document.createElement("div");
+    divPic.classList.add("position-relative");
+
+    const pic = document.createElement("img");
+    pic.classList.add("bd-placeholder-img", "card-img-top", "rounded-circle", "p-2");
+    pic.style.objectFit = "contain";
+
+    pic.setAttribute("src", currentArtist.data[0].artist.picture);
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const artist = document.createElement("h5");
+    artist.classList.add("card-title", "text-truncate");
+    artist.innerText = currentArtist.data[0].artist.name;
+
+    // const title = document.createElement("p");
+    // title.classList.add("card-text", "text-truncate");
+    // title.innerText = albums[index].title;
+    // title.style.cursor = "pointer";
+
+    const playBtn = document.createElement("button");
+    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
+    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+
+    col.addEventListener("mouseover", (e) => {
+      playBtn.classList.remove("d-none");
+      card.classList.add("shadow-lg");
+    });
+    col.addEventListener("mouseout", (e) => {
+      playBtn.classList.add("d-none");
+      card.classList.remove("shadow-lg");
+    });
+
+    divPic.appendChild(playBtn);
+
+    cardBody.appendChild(artist);
+    // cardBody.appendChild(title);
+
+    divPic.appendChild(pic);
+    card.appendChild(divPic);
+    card.appendChild(cardBody);
+
+    col.appendChild(card);
+
+    row4.appendChild(col);
+  }
+};
+
 window.addEventListener("DOMContentLoaded", async () => {
   const options = {
     method: "GET",
@@ -415,7 +499,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     fetchPlaylist(options);
     fetchAlbum(albumUrl, options, row1);
     fetchArtist(artistArray, options, row2);
-    fetchSong(url, options, row3);
+    fetchArtist2(artistArray, options, row4);
+    fetchSong(url2, options, row3);
   } catch (error) {
     console.error(error);
   }
