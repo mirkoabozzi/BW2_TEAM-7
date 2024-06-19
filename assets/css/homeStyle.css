@@ -11986,4 +11986,25 @@ svg {
 }
 #main svg {
   fill: black;
+}
+
+@media (max-width: 1399px) {
+  .hide-on-xl {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .hide-on-lg {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hide-on-md {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hide-on-sm {
+    display: none;
+  }
 }/*# sourceMappingURL=homeStyle.css.map */
