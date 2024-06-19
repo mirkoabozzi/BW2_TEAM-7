@@ -84,6 +84,7 @@ fetchAlbum = async (albumUrl, options, row) => {
 
     const card = document.createElement("div");
     card.classList.add("card", "border-0");
+    card.style.cursor = "pointer";
     // card.style.width = "180px";
 
     const divPic = document.createElement("div");
@@ -91,7 +92,6 @@ fetchAlbum = async (albumUrl, options, row) => {
 
     const pic = document.createElement("img");
     pic.classList.add("bd-placeholder-img", "card-img-top", "p-2");
-    pic.style.cursor = "pointer";
     pic.style.objectFit = "contain";
 
     pic.setAttribute("src", albums[index].cover);
@@ -107,7 +107,6 @@ fetchAlbum = async (albumUrl, options, row) => {
     const title = document.createElement("p");
     title.classList.add("card-text", "text-truncate");
     title.innerText = albums[index].title;
-    title.style.cursor = "pointer";
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
@@ -193,6 +192,7 @@ fetchSong = async (url, options, row) => {
 
     const card = document.createElement("div");
     card.classList.add("card", "border-0");
+    card.style.cursor = "pointer";
     // card.style.width = "180px";
 
     const divPic = document.createElement("div");
@@ -200,7 +200,6 @@ fetchSong = async (url, options, row) => {
 
     const pic = document.createElement("img");
     pic.classList.add("bd-placeholder-img", "card-img-top", "p-2");
-    pic.style.cursor = "pointer";
     pic.style.objectFit = "contain";
 
     pic.setAttribute("src", song.album.cover);
@@ -210,13 +209,11 @@ fetchSong = async (url, options, row) => {
 
     const artist = document.createElement("h5");
     artist.classList.add("card-title", "text-truncate");
-    artist.style.cursor = "pointer";
     artist.innerText = song.artist.name;
 
     const title = document.createElement("p");
     title.classList.add("card-text", "text-truncate");
     title.innerText = song.title;
-    title.style.cursor = "pointer";
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
@@ -277,6 +274,7 @@ fetchPlaylist = async (options) => {
       // console.log("playlist index", arrayPlaylists[index]);
       const col = document.createElement("div");
       col.classList.add("col-6", "col-lg-4", "my-1");
+      col.style.cursor = "pointer";
 
       const divFlex = document.createElement("div");
       divFlex.classList.add("d-flex", "align-items-center");
@@ -356,6 +354,7 @@ fetchArtist = async (artistArray, options, row) => {
 
     const card = document.createElement("div");
     card.classList.add("card", "border-0");
+    card.style.cursor = "pointer";
     // card.style.width = "180px";
 
     const divPic = document.createElement("div");
@@ -363,7 +362,6 @@ fetchArtist = async (artistArray, options, row) => {
 
     const pic = document.createElement("img");
     pic.classList.add("bd-placeholder-img", "card-img-top", "p-2");
-    pic.style.cursor = "pointer";
     pic.style.objectFit = "contain";
 
     pic.setAttribute("src", currentArtist.data[0].artist.picture);
@@ -373,7 +371,6 @@ fetchArtist = async (artistArray, options, row) => {
 
     const artist = document.createElement("h5");
     artist.classList.add("card-title", "text-truncate");
-    artist.style.cursor = "pointer";
     artist.innerText = currentArtist.data[0].artist.name;
 
     // const title = document.createElement("p");

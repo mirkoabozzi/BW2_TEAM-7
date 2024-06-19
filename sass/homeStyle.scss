@@ -5,6 +5,10 @@ svg{
     
 }
 
+body{
+    overflow-y: hidden;
+}
+
 #homeContainer{
     top:16px;
 }
@@ -20,12 +24,26 @@ svg{
 }
 
 #main{
-    margin-bottom: 100px;
-    // height: 100vh;
+    // margin-top: 20px;
+   margin-bottom: 100px;
+    height: 90vh;
     overflow: auto;
     svg{
         fill:black
     }
+}
+#library{
+    margin-bottom: 100px;
+    height: 74vh;
+}
+
+#mobileContainer{
+    // margin-bottom: 100px;
+    
+}
+#playerContainer{
+    // position:fixed;
+    // bottom:54px;
 }
 
 @media (max-width: 1399px){
@@ -38,14 +56,23 @@ svg{
     .hide-on-lg {
         display: none;
     }
+   
 }
 @media screen and (max-width: 991px){
     .hide-on-md {
         display: none;
     }
+    
 }
 @media screen and (max-width: 767px){
     .hide-on-sm {
         display: none;
     }
 }
+
+// @media screen and (min-width: 991px){
+//     #playerContainer{
+//         position: fixed;
+//         bottom:0px;
+//     }
+// }

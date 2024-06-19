@@ -11964,6 +11964,10 @@ svg {
   fill: #A7A7A7;
 }
 
+body {
+  overflow-y: hidden;
+}
+
 #homeContainer {
   top: 16px;
 }
@@ -11982,10 +11986,16 @@ svg {
 
 #main {
   margin-bottom: 100px;
+  height: 90vh;
   overflow: auto;
 }
 #main svg {
   fill: black;
+}
+
+#library {
+  margin-bottom: 100px;
+  height: 74vh;
 }
 
 @media (max-width: 1399px) {
