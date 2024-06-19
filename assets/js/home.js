@@ -83,7 +83,7 @@ fetchAlbum = async (albumUrl, options, row) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("card", "border-0");
+    card.classList.add("border-0");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
@@ -191,7 +191,7 @@ fetchSong = async (url, options, row) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("card", "border-0");
+    card.classList.add("border-0");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
@@ -246,79 +246,75 @@ fetchSong = async (url, options, row) => {
 };
 
 fetchPlaylist = async (options) => {
-  try {
-    const response = await fetch(randomPlaylists(playlistArray), options);
-    const playlist = await response.json();
-    console.log("playlist", playlist);
-    // console.log("tracks", playlist.tracks);
-    // console.log("data", playlist.tracks.data);
+  const response = await fetch(randomPlaylists(playlistArray), options);
+  const playlist = await response.json();
+  console.log("playlist", playlist);
+  // console.log("tracks", playlist.tracks);
+  // console.log("data", playlist.tracks.data);
 
-    const response2 = await fetch(randomPlaylists(playlistArray), options);
-    const playlist2 = await response2.json();
+  const response2 = await fetch(randomPlaylists(playlistArray), options);
+  const playlist2 = await response2.json();
 
-    const response3 = await fetch(randomPlaylists(playlistArray), options);
-    const playlist3 = await response3.json();
+  const response3 = await fetch(randomPlaylists(playlistArray), options);
+  const playlist3 = await response3.json();
 
-    const response4 = await fetch(randomPlaylists(playlistArray), options);
-    const playlist4 = await response4.json();
+  const response4 = await fetch(randomPlaylists(playlistArray), options);
+  const playlist4 = await response4.json();
 
-    const response5 = await fetch(randomPlaylists(playlistArray), options);
-    const playlist5 = await response5.json();
+  const response5 = await fetch(randomPlaylists(playlistArray), options);
+  const playlist5 = await response5.json();
 
-    const response6 = await fetch(randomPlaylists(playlistArray), options);
-    const playlist6 = await response6.json();
+  const response6 = await fetch(randomPlaylists(playlistArray), options);
+  const playlist6 = await response6.json();
 
-    const arrayPlaylists = [playlist, playlist2, playlist3, playlist4, playlist5, playlist6];
+  const arrayPlaylists = [playlist, playlist2, playlist3, playlist4, playlist5, playlist6];
 
-    for (let index = 0; index < arrayPlaylists.length; index++) {
-      // console.log("playlist index", arrayPlaylists[index]);
-      const col = document.createElement("div");
-      col.classList.add("col-6", "col-lg-4", "my-1");
-      col.style.cursor = "pointer";
+  for (let index = 0; index < arrayPlaylists.length; index++) {
+    // console.log("playlist index", arrayPlaylists[index]);
+    const col = document.createElement("div");
+    col.classList.add("col-6", "col-lg-4", "my-1");
+    col.style.cursor = "pointer";
 
-      const divFlex = document.createElement("div");
-      divFlex.classList.add("d-flex", "align-items-center");
+    const divFlex = document.createElement("div");
+    divFlex.classList.add("d-flex", "align-items-center");
 
-      const picContainer = document.createElement("div");
-      // picContainer.classList.add("position-relative");
+    const picContainer = document.createElement("div");
+    // picContainer.classList.add("position-relative");
 
-      const pic = document.createElement("img");
-      pic.setAttribute("src", arrayPlaylists[index].picture_small);
+    const pic = document.createElement("img");
+    pic.setAttribute("src", arrayPlaylists[index].picture_small);
 
-      const titleContainer = document.createElement("div");
-      titleContainer.classList.add("ms-2", "me-auto");
+    const titleContainer = document.createElement("div");
+    titleContainer.classList.add("ms-2", "me-auto");
 
-      const title = document.createElement("p");
-      title.innerText = arrayPlaylists[index].title;
+    const title = document.createElement("p");
+    title.innerText = arrayPlaylists[index].title;
 
-      const playBtn = document.createElement("button");
-      playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
-      playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "bottom-0", "end-0", "d-none", "p-2");
+    const playBtn = document.createElement("button");
+    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
+    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "bottom-0", "end-0", "d-none", "p-2");
 
-      col.addEventListener("mouseover", (e) => {
-        playBtn.classList.remove("d-none");
-        col.classList.add("shadow-lg");
-      });
-      col.addEventListener("mouseout", (e) => {
-        playBtn.classList.add("d-none");
-        col.classList.remove("shadow-lg");
-      });
+    col.addEventListener("mouseover", (e) => {
+      playBtn.classList.remove("d-none");
+      col.classList.add("shadow-lg");
+    });
+    col.addEventListener("mouseout", (e) => {
+      playBtn.classList.add("d-none");
+      col.classList.remove("shadow-lg");
+    });
 
-      titleContainer.appendChild(title);
+    titleContainer.appendChild(title);
 
-      picContainer.appendChild(pic);
-      // picContainer.appendChild(playBtn);
+    picContainer.appendChild(pic);
+    // picContainer.appendChild(playBtn);
 
-      divFlex.appendChild(picContainer);
-      divFlex.appendChild(titleContainer);
-      divFlex.appendChild(playBtn);
+    divFlex.appendChild(picContainer);
+    divFlex.appendChild(titleContainer);
+    divFlex.appendChild(playBtn);
 
-      col.appendChild(divFlex);
+    col.appendChild(divFlex);
 
-      playlistRow.appendChild(col);
-    }
-  } catch (error) {
-    console.error(error);
+    playlistRow.appendChild(col);
   }
 };
 
@@ -353,7 +349,7 @@ fetchArtist = async (artistArray, options, row) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("card", "border-0");
+    card.classList.add("border-0");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
