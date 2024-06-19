@@ -11968,6 +11968,10 @@ svg {
   fill: black;
 }
 
+#playMobile {
+  fill: white;
+}
+
 #homeContainer {
   top: 16px;
 }
@@ -11991,4 +11995,8 @@ svg {
 
 span {
   color: grey;
+}
+
+#main {
+  margin-bottom: 77px;
 }/*# sourceMappingURL=albumStyle.css.map */

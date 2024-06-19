@@ -11,12 +11,14 @@
     />
   </head>
 
-  <!-- data-bs-theme="dark" -->
-
   <body class="bg-black" data-bs-theme="dark">
+    <!-- contenitore totale-->
     <div class="container-fluid my-3">
+      <!-- riga totale -->
       <div class="row">
-        <div class="col-4 col-xl-2">
+        <!-- colonna laterale sinistra -->
+        <div class="col-lg-3 col-xl-2 col-xxl-2 d-none d-lg-block">
+          <!-- contenitore home e search -->
           <div
             id="homeContainer"
             class="container sticky-top bg-dark p-2 mb-3 rounded-3"
@@ -55,7 +57,9 @@
             </div>
           </div>
 
+          <!-- contenitore "la tua libreria" -->
           <div id="libreryContainer" class="sticky-top bg-dark rounded-3">
+            <!-- parte superiore -->
             <div class="container">
               <div class="d-flex align-items-center py-2">
                 <div class="me-2">
@@ -110,6 +114,8 @@
                 <button class="btn btn-secondary rounded-4">Artisti</button>
               </div>
             </div>
+
+            <!-- parte inferiore -->
             <div class="container py-2">
               <div class="d-flex">
                 <div>
@@ -192,8 +198,14 @@
             </div>
           </div>
         </div>
-        <div class="col-8">
-          <header id="header" class="sticky-top bg-dark py-3 rounded-top-3">
+
+        <!-- colonna centrale -->
+        <div class="col-sm-12 col-lg-9 col-xl-8 col-xxl-8">
+          <!-- sezione superiore centrale -->
+          <header
+            id="header"
+            class="sticky-top bg-dark py-3 rounded-top-3 d-none d-lg-block"
+          >
             <div class="container-fluid">
               <div class="row">
                 <div class="col">
@@ -273,23 +285,32 @@
             </div>
           </header>
 
+          <!-- sezione album e tracce centrale -->
           <main id="main" class="rounded-bottom-3 bg-dark">
-            <section class="border-bottom">
+            <!-- sezione immagine e titolo album -->
+            <section>
               <div class="container-fluid py-3">
                 <div class="row align-items-end">
-                  <div class="col-6 col-lg-3 my-1">
+                  <!-- immagine album -->
+                  <div
+                    class="col-sm-12 col-md-12 col-lg-5 col-xl-4 col-xxl-3 my-1 text-center"
+                  >
                     <img
                       src="./assets/imgs/main/image-1.jpg"
                       alt=""
-                      width="260px"
-                      height="260px"
+                      width="300px"
+                      height="300px"
                       class="img-fluid shadow-lg"
                     />
                   </div>
-                  <div class="col-6 col-lg-4 my-1">
+
+                  <!-- titolo album -->
+                  <div
+                    class="col-sm-12 col-md-12 col-lg-7 col-xl-8 col-xxl-9 my-1"
+                  >
                     <h6>ALBUM</h6>
-                    <h1 class="fw-semibold pb-5">TITOLO ALBUM</h1>
-                    <div class="d-flex align-items-center">
+                    <h1 class="fw-semibold">TITOLO ALBUM</h1>
+                    <div class="d-flex align-items-center pt-4">
                       <div>
                         <img
                           src="./assets/imgs/main/image-1.jpg"
@@ -311,10 +332,12 @@
               </div>
             </section>
 
-            <section class="border-bottom">
+            <!-- sezione pulsanti, titolo e riproduzioni -->
+            <section>
               <div class="container-fluid my-3">
+                <!-- pulsanti -->
                 <div class="d-flex align-items-center">
-                  <div class="px-2">
+                  <div class="px-2 d-none d-lg-block">
                     <svg
                       data-encore-id="icon"
                       role="img"
@@ -372,12 +395,31 @@
                       />
                     </svg>
                   </div>
+                  <div class="px-2 ms-auto d-lg-none">
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      viewBox="0 0 16 16"
+                      class="Svg-sc-ytk21e-0 dYnaPI bg-success rounded-circle p-3"
+                      id="play"
+                      width="55px"
+                    >
+                      <path
+                        d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
-                <div class="row align-items-center pt-4">
-                  <div class="col-1 ps-5 pe-0 text-center">#</div>
-                  <div class="col-4 pe-5 ps-0">TITOLO</div>
-                  <div class="col-6 px-5 text-center">RIPRODUZIONI</div>
-                  <div class="col-1 px-5">
+
+                <!-- titolo, riproduzioni -->
+                <div
+                  class="row align-items-center py-3 d-none d-lg-flex border-bottom"
+                >
+                  <div class="col-1 col-xxl-1 text-center">#</div>
+                  <div class="col-2 col-xxl-2">TITOLO</div>
+                  <div class="col-8 col-xxl-8 text-center">RIPRODUZIONI</div>
+                  <div class="col-1 col-xxl-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -398,86 +440,264 @@
               </div>
             </section>
 
+            <!-- sezione tracce -->
             <section>
               <div class="container-fluid my-3">
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-1 ps-5 pe-0 text-center"><span>1</span></div>
-                  <div class="col-4 pe-5 ps-0">
+                  <div class="col-1 col-xxl-1 text-center d-none d-lg-block">
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="col-11 col-sm-11 col-md-11 col-lg-2 col-xl-2 col-xxl-2"
+                  >
                     <h4>titolo</h4>
                     <span>artista</span>
                   </div>
-                  <div class="col-6 px-5 text-center"><span>111.111</span></div>
-                  <div class="col-1 px-5"><span>1:28</span></div>
+                  <div class="col-8 col-xxl-8 text-center d-none d-lg-block">
+                    <span>111.111</span>
+                  </div>
+                  <div class="col-1 col-xxl-1 d-none d-lg-block">
+                    <span>1:28</span>
+                  </div>
+                  <div class="col-1 d-lg-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
               </div>
             </section>
           </main>
         </div>
 
-        <div class="col-2 d-sm-none d-lg-block">
+        <!-- colonna laterale destra -->
+        <div class="col-xl-2 col-xxl-2 d-none d-xl-block">
           <div id="socialContainer" class="sticky-top">
             <h3>Social</h3>
             <div class="row my-2">
@@ -516,11 +736,17 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid bg-dark fixed-bottom">
-      <div class="row justify-content-between pt-2">
+
+    <!-- sezione inferiore player -->
+    <div id="player" class="container-fluid bg-dark fixed-bottom">
+      <div class="row justify-content-between pt-2 align-items-center">
+        <!-- sezione inferiore sinistra -->
         <div class="col-3 p-1">
           <div class="row align-items-center">
-            <div class="col-2 text-center pe-0">
+            <!-- immagine album -->
+            <div
+              class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-3 col-xxl-2 text-center pe-0"
+            >
               <img
                 src="./assets/imgs/main/image-1.jpg"
                 alt="album"
@@ -529,11 +755,17 @@
                 class="img-fluid"
               />
             </div>
-            <div class="col-4 pe-0">
-              <h6 class="m-0">artista</h6>
-              <span class="m-0">album</span>
+
+            <!-- titolo e artista -->
+            <div
+              class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 pe-0"
+            >
+              <h6 class="m-0">titolo</h6>
+              <span class="m-0 d-none d-lg-block">artista</span>
             </div>
-            <div class="col-1 px-0">
+
+            <!-- pulsante cuore -->
+            <div class="col-lg-1 col-xl-1 col-xxl-1 px-0 d-none d-lg-block">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -550,9 +782,12 @@
           </div>
         </div>
 
-        <div class="col-4">
-          <div class="row justify-content-center">
-            <div class="col-1 p-0 text-center">
+        <!-- sezione inferiore centrale -->
+        <div class="col-6">
+          <!-- pulsanti -->
+          <div class="d-none d-lg-flex justify-content-center gap-4">
+            <!-- pulsante casuale -->
+            <div>
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -570,7 +805,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="col-1 p-0 text-center">
+
+            <!-- pulsante indietro -->
+            <div>
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -585,7 +822,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="col-1 p-0 text-center">
+
+            <!-- pulsante play/pausa -->
+            <div>
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -600,7 +839,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="col-1 p-0 text-center">
+
+            <!-- pulsante avanti -->
+            <div>
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -616,7 +857,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="col-1 p-0 text-center">
+
+            <!-- pulsante ripetizione -->
+            <div>
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -633,9 +876,14 @@
             </div>
           </div>
 
+          <!-- barra tempo -->
           <div class="row my-2 align-items-center">
-            <div class="col-1 text-center"><span>00:20</span></div>
-            <div class="col-10">
+            <div
+              class="col-lg-2 col-xl-2 col-xxl-2 text-center d-none d-lg-block"
+            >
+              <span>00:20</span>
+            </div>
+            <div class="col-md col-lg-8 col-xl-8 col-xxl-8">
               <div
                 class="progress"
                 role="progressbar"
@@ -648,19 +896,26 @@
                 <div class="progress-bar bg-white w-25"></div>
               </div>
             </div>
-            <div class="col-1 text-center"><span>3:00</span></div>
+            <div
+              class="col-lg-2 col-xl-2 col-xxl-2 text-center d-none d-lg-block"
+            >
+              <span>3:00</span>
+            </div>
           </div>
         </div>
+
+        <!-- sezione inferiore destra -->
         <div class="col-3">
-          <div class="row">
-            <div class="col my-2">
+          <div class="row align-items-center justify-content-center">
+            <!-- pulsante testi -->
+            <div class="col-lg-1 col-xl-1 col-xxl-1 d-none d-lg-block">
               <svg
                 data-encore-id="icon"
                 role="img"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
-                width="20px"
-                height="20px"
+                width="16px"
+                height="16px"
                 class="Svg-sc-ytk21e-0 dYnaPI"
               >
                 <path
@@ -668,14 +923,16 @@
                 ></path>
               </svg>
             </div>
-            <div class="col my-2">
+
+            <!-- pulsante coda -->
+            <div class="col-lg-1 col-xl-1 col-xxl-1 d-none d-lg-block">
               <svg
                 data-encore-id="icon"
                 role="img"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
-                width="20px"
-                height="20px"
+                width="16px"
+                height="16px"
                 class="Svg-sc-ytk21e-0 dYnaPI"
               >
                 <path
@@ -683,15 +940,17 @@
                 ></path>
               </svg>
             </div>
-            <div class="col my-2">
+
+            <!-- pulsante dispositivo -->
+            <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1 col-xxl-1">
               <svg
                 data-encore-id="icon"
                 role="presentation"
                 aria-hidden="true"
                 class="Svg-sc-ytk21e-0 dYnaPI"
                 viewBox="0 0 16 16"
-                width="20px"
-                height="20px"
+                width="16px"
+                height="16px"
               >
                 <path
                   d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
@@ -701,7 +960,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="col my-2">
+
+            <!-- pulsante muta volume -->
+            <div class="col-lg-1 col-xl-1 col-xxl-1 d-none d-lg-block">
               <svg
                 data-encore-id="icon"
                 role="presentation"
@@ -709,8 +970,8 @@
                 aria-hidden="true"
                 id="volume-icon"
                 viewBox="0 0 16 16"
-                width="20px"
-                height="20px"
+                width="16px"
+                height="16px"
                 class="Svg-sc-ytk21e-0 kcUFwU"
               >
                 <path
@@ -721,7 +982,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="col my-2">
+
+            <!-- barra volume -->
+            <div class="col-lg-5 col-xl-5 col-xxl-5 d-none d-lg-block">
               <div
                 class="progress"
                 role="progressbar"
@@ -729,36 +992,21 @@
                 aria-valuenow="100"
                 aria-valuemin="0"
                 aria-valuemax="100"
+                style="height: 5px"
               >
-                <div class="progress-bar bg-white" style="width: 30%"></div>
+                <div class="progress-bar bg-white w-25"></div>
               </div>
             </div>
-            <div class="col my-2">
+
+            <!-- pulsante schermo intero -->
+            <div class="col-lg-1 col-xl-1 col-xxl-1 d-none d-lg-block">
               <svg
                 data-encore-id="icon"
                 role="img"
                 aria-hidden="true"
                 viewBox="0 0 16 16"
-                width="20px"
-                height="20px"
-                class="Svg-sc-ytk21e-0 dYnaPI"
-              >
-                <path
-                  d="M16 2.45c0-.8-.65-1.45-1.45-1.45H1.45C.65 1 0 1.65 0 2.45v11.1C0 14.35.65 15 1.45 15h5.557v-1.5H1.5v-11h13V7H16V2.45z"
-                ></path>
-                <path
-                  d="M15.25 9.007a.75.75 0 0 1 .75.75v4.493a.75.75 0 0 1-.75.75H9.325a.75.75 0 0 1-.75-.75V9.757a.75.75 0 0 1 .75-.75h5.925z"
-                ></path>
-              </svg>
-            </div>
-            <div class="col my-2">
-              <svg
-                data-encore-id="icon"
-                role="img"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                width="20px"
-                height="20px"
+                width="16px"
+                height="16px"
                 class="Svg-sc-ytk21e-0 dYnaPI"
               >
                 <path
@@ -766,9 +1014,94 @@
                 ></path>
               </svg>
             </div>
+
+            <!-- pulsante cuore versione mobile -->
+            <div class="col-2 d-lg-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-heart"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                ></path>
+              </svg>
+            </div>
+
+            <!-- pulsante play versione mobile -->
+            <div class="col-1 d-lg-none">
+              <svg
+                data-encore-id="icon"
+                role="img"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                class="Svg-sc-ytk21e-0 dYnaPI"
+                width="29px"
+                id="playMobile"
+              >
+                <path
+                  d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"
+                ></path>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- pulsanti versione mobile -->
+      <!-- <div
+        id="mobileContainer"
+        class="d-flex d-lg-none justify-content-around p-3 fixed-bottom bg-black"
+      >
+        <div>
+          <svg
+            data-encore-id="icon"
+            role="img"
+            aria-hidden="true"
+            class="Svg-sc-ytk21e-0 bneLcE home-icon QbaKKdcHNA2x3_YJvpYu"
+            viewBox="0 0 24 24"
+            width="30px"
+            height="30px"
+          >
+            <path
+              d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <svg
+            data-encore-id="icon"
+            role="img"
+            aria-hidden="true"
+            class="Svg-sc-ytk21e-0 bneLcE search-icon QbaKKdcHNA2x3_YJvpYu"
+            viewBox="0 0 24 24"
+            width="30px"
+            height="30px"
+          >
+            <path
+              d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z"
+            ></path>
+          </svg>
+        </div>
+        <div>
+          <svg
+            data-encore-id="icon"
+            role="img"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="30px"
+            height="30px"
+            class="Svg-sc-ytk21e-0 bneLcE"
+          >
+            <path
+              d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+            ></path>
+          </svg>
+        </div>
+      </div> -->
     </div>
 
     <script
