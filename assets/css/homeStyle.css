@@ -11964,17 +11964,20 @@ svg {
   fill: #a7a7a7;
 }
 
+#playBtn {
+  fill: black;
+}
+
+#playMobile {
+  fill: white;
+}
+
 body {
   font-family: "Circular";
   overflow-y: hidden;
 }
 
-#playBtn {
-  fill: black;
-}
-
 #main {
-  margin-bottom: 120px;
   max-height: 85vh;
   overflow: auto;
 }

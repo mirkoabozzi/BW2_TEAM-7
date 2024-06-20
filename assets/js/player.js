@@ -6,27 +6,23 @@ const currentDuration = document.getElementById("currentDuration");
 const progressContainer = progress.parentElement;
 const playSongBtns = document.querySelectorAll(".PlaySong");
 
-
-playSongBtns.forEach(function(button) {
-  button.addEventListener("click", function() {
-    
-  });
+playSongBtns.forEach(function (button) {
+  button.addEventListener("click", function () {});
 });
-
 
 //-------------------GESTIONE PROGRESS BAR-------------------------------
 const playPause = function () {
   if (playBtn.classList.contains("paused")) {
     song.play();
-    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
+    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 30 16" class="Svg-sc-ytk21e-0 dYnaPI" width="29px" id="playBtn" >
     <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
     </path></svg>`;
     playBtn.classList.remove("paused");
     playBtn.classList.add("playing");
   } else if (playBtn.classList.contains("playing")) {
     song.pause();
-    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" style="fill:black;"
-      height="20px" class="Svg-sc-ytk21e-0 dYnaPI">
+    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 30 16" width="29px" 
+       class="Svg-sc-ytk21e-0 dYnaPI" id="playBtn">
       <path
         d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
       </path>
@@ -73,23 +69,24 @@ document.addEventListener("mouseup", () => {
   isProgressDragging = false;
 });
 
- //funzione per muovere la barra al click/drag
+//funzione per muovere la barra al click/drag
 function updateProgress(e) {
   const rect = progressContainer.getBoundingClientRect(); // Ottiene le dimensioni e la posizione del contenitore del progress
-  const offsetX = e.clientX - rect.left;      // Calcola la posizione orizzontale del click rispetto al contenitore del progress
-  const width = rect.width;   // Ottiene la larghezza del contenitore del progress
+  const offsetX = e.clientX - rect.left; // Calcola la posizione orizzontale del click rispetto al contenitore del progress
+  const width = rect.width; // Ottiene la larghezza del contenitore del progress
   const percentage = Math.min(Math.max(0, offsetX / width), 1); //Calcola la percentuale di progresso, assicurandosi che sia tra 0 e 1
-  const duration = song.duration;    // Ottiene la durata totale della canzone
-  song.currentTime = percentage * duration; 
+  const duration = song.duration; // Ottiene la durata totale della canzone
+  song.currentTime = percentage * duration;
   progress.style.width = `${percentage * 100}%`; // Imposta il tempo corrente della canzone in base alla percentuale di progress
   currentDuration.textContent = durationConverter(song.currentTime); // Aggiorna il testo che mostra la durata corrente della canzone
 }
 
-song.addEventListener("ended", () => {  //a canzone finita sostituisce l'icona pausa con l'icona play e riassegna le classi
+song.addEventListener("ended", () => {
+  //a canzone finita sostituisce l'icona pausa con l'icona play e riassegna le classi
   playBtn.classList.remove("playing");
   playBtn.classList.add("paused");
-  playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px"
-    height="20px" class="Svg-sc-ytk21e-0 dYnaPI">
+  playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 30 16" width="29px"
+     class="Svg-sc-ytk21e-0 dYnaPI" id="playBtn">
     <path
       d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
     </path>
@@ -99,10 +96,10 @@ song.addEventListener("ended", () => {  //a canzone finita sostituisce l'icona p
 //--------------------GESTIONE VOLUME BAR----------------------------------------
 const volumeBar = document.getElementById("volume-bar");
 const volumeContainer = volumeBar.parentElement;
-let isVolumeDragging= false;
+let isVolumeDragging = false;
 
 song.volume = 0.1; // Volume iniziale a 30%
-volumeBar.style.width = '10%'; // Aggiorna la width del volume bar in base al volume iniziale
+volumeBar.style.width = "10%"; // Aggiorna la width del volume bar in base al volume iniziale
 
 volumeContainer.addEventListener("mousedown", (e) => {
   isVolumeDragging = true;
