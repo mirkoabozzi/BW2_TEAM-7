@@ -6,6 +6,9 @@ const currentDuration = document.getElementById("currentDuration");
 const progressContainer = progress.parentElement;
 
 
+
+
+
 //-------------------GESTIONE PROGRESS BAR-------------------------------
 const playPause = function () {
   if (playBtn.classList.contains("paused")) {
