@@ -4,23 +4,28 @@ const song = document.getElementById("song");
 const totDuration = document.getElementById("totDuration");
 const currentDuration = document.getElementById("currentDuration");
 const progressContainer = progress.parentElement;
+const playSongBtns = document.querySelectorAll(".PlaySong");
 
 
-
+playSongBtns.forEach(function(button) {
+  button.addEventListener("click", function() {
+    
+  });
+});
 
 
 //-------------------GESTIONE PROGRESS BAR-------------------------------
 const playPause = function () {
   if (playBtn.classList.contains("paused")) {
     song.play();
-    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
+    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
     <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
     </path></svg>`;
     playBtn.classList.remove("paused");
     playBtn.classList.add("playing");
   } else if (playBtn.classList.contains("playing")) {
     song.pause();
-    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px"
+    playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" style="fill:black;"
       height="20px" class="Svg-sc-ytk21e-0 dYnaPI">
       <path
         d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
@@ -95,6 +100,9 @@ song.addEventListener("ended", () => {  //a canzone finita sostituisce l'icona p
 const volumeBar = document.getElementById("volume-bar");
 const volumeContainer = volumeBar.parentElement;
 let isVolumeDragging= false;
+
+song.volume = 0.1; // Volume iniziale a 30%
+volumeBar.style.width = '10%'; // Aggiorna la width del volume bar in base al volume iniziale
 
 volumeContainer.addEventListener("mousedown", (e) => {
   isVolumeDragging = true;
