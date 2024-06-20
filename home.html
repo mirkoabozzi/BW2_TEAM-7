@@ -499,7 +499,8 @@
 
       <div class="col-4 d-flex flex-column justify-content-center">
         
-        <audio controls id="song">
+        <!-- --------------------AUDIO----------------------------- -->
+        <audio id="song">
           <source src="https://cdns-preview-5.dzcdn.net/stream/c-5a9b2da5acb610170196eb5872c7d2ab-17.mp3"
             type="audio/mpeg">
         </audio>
@@ -551,7 +552,7 @@
             </svg>
           </div>
         </div>
-
+        <!-- ---------------PLAYER-------------------------------- -->
         <div class="row my-2">
           <div class="col-2" id="currentDuration">0:07</div>
           <div class="col">
@@ -600,10 +601,11 @@
               <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path>
             </svg>
           </div>
+          <!-- ----------------VOLUME------------------------------- -->
           <div class="col my-2">
             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0"
-              aria-valuemax="100">
-              <div class="progress-bar bg-white" id="volume-bar" style="width: 30%; cursor:pointer;"></div>
+              aria-valuemax="100" style="cursor:pointer;">
+              <div class="progress-bar bg-white" id="volume-bar" style="width: 30%; "></div>
             </div>
           </div>
           <div class="col my-2">
