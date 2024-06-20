@@ -20,7 +20,7 @@ const albumUrl4 = "https://deezerdevs-deezer.p.rapidapi.com/album/548735872";
 const albumUrl5 = "https://deezerdevs-deezer.p.rapidapi.com/album/545453842";
 const albumUrl6 = "https://deezerdevs-deezer.p.rapidapi.com/album/584357862";
 
-const playlistArray = [25, 50, 1220, 2500, 5650, 6500, 3250, 4760, 450, 9850];
+const playlistArray = [25, 50, 1220, 2500, 5650, 6500, 3250, 4760, 450, 9850, 980, 322];
 
 const randomPlaylists = (array) => {
   const randomNumber = Math.floor(Math.random() * array.length);
@@ -62,6 +62,11 @@ fetchAlbum = async (albumUrl, options, row) => {
     // console.log("index", albums[index]);
     const col = document.createElement("div");
     col.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
+
+    col.addEventListener("click", () => {
+      window.location.assign("./album.html?spotifyId=" + album.id);
+    });
+    console.log(album.id);
     // if (index === 5) {
     //   col.classList.add("d-lg-none");
     // }
@@ -84,7 +89,7 @@ fetchAlbum = async (albumUrl, options, row) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("border-0");
+    card.classList.add("border-0", "rounded");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
@@ -115,11 +120,11 @@ fetchAlbum = async (albumUrl, options, row) => {
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
-      card.classList.add("shadow-lg");
+      card.classList.add("shadow-lg", "bg-secondary");
     });
     col.addEventListener("mouseout", (e) => {
       playBtn.classList.add("d-none");
-      card.classList.remove("shadow-lg");
+      card.classList.remove("shadow-lg", "bg-secondary");
     });
 
     divPic.appendChild(playBtn);
@@ -192,7 +197,7 @@ fetchSong = async (url, options, row) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("border-0");
+    card.classList.add("border-0", "rounded");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
@@ -222,11 +227,11 @@ fetchSong = async (url, options, row) => {
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
-      card.classList.add("shadow-lg");
+      card.classList.add("shadow-lg", "bg-secondary");
     });
     col.addEventListener("mouseout", (e) => {
       playBtn.classList.add("d-none");
-      card.classList.remove("shadow-lg");
+      card.classList.remove("shadow-lg", "bg-secondary");
     });
 
     divPic.appendChild(playBtn);
@@ -273,7 +278,7 @@ fetchPlaylist = async (options) => {
   for (let index = 0; index < arrayPlaylists.length; index++) {
     // console.log("playlist index", arrayPlaylists[index]);
     const col = document.createElement("div");
-    col.classList.add("col-6", "col-lg-4", "my-1");
+    col.classList.add("col-6", "col-lg-4", "my-1", "rounded");
     col.style.cursor = "pointer";
 
     const divFlex = document.createElement("div");
@@ -297,11 +302,11 @@ fetchPlaylist = async (options) => {
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
-      col.classList.add("shadow-lg");
+      col.classList.add("shadow-lg", "bg-secondary");
     });
     col.addEventListener("mouseout", (e) => {
       playBtn.classList.add("d-none");
-      col.classList.remove("shadow-lg");
+      col.classList.remove("shadow-lg", "bg-secondary");
     });
 
     titleContainer.appendChild(title);
@@ -350,7 +355,7 @@ fetchArtist = async (artistArray, options, row) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("border-0");
+    card.classList.add("border-0", "rounded");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
@@ -381,11 +386,11 @@ fetchArtist = async (artistArray, options, row) => {
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
-      card.classList.add("shadow-lg");
+      card.classList.add("shadow-lg", "bg-secondary");
     });
     col.addEventListener("mouseout", (e) => {
       playBtn.classList.add("d-none");
-      card.classList.remove("shadow-lg");
+      card.classList.remove("shadow-lg", "bg-secondary");
     });
 
     divPic.appendChild(playBtn);
@@ -434,7 +439,7 @@ fetchArtist2 = async (artistArray, options, row4) => {
     }
 
     const card = document.createElement("div");
-    card.classList.add("border-0");
+    card.classList.add("border-0", "rounded");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
 
@@ -465,11 +470,11 @@ fetchArtist2 = async (artistArray, options, row4) => {
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
-      card.classList.add("shadow-lg");
+      card.classList.add("shadow-lg", "bg-secondary");
     });
     col.addEventListener("mouseout", (e) => {
       playBtn.classList.add("d-none");
-      card.classList.remove("shadow-lg");
+      card.classList.remove("shadow-lg", "bg-secondary");
     });
 
     divPic.appendChild(playBtn);
@@ -506,3 +511,13 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.error(error);
   }
 });
+
+// window.addEventListener("scroll", () => {
+//   const main = document.getElementsByTagName("main");
+//   const header = document.getElementById("header");
+//   if (main.scrollY > 50) {
+//     header.style.backgroundColor = "#121212";
+//   } else {
+//     header.style.backgroundColor = "#33363A2";
+//   }
+// });
