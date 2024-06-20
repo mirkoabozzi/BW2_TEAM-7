@@ -513,11 +513,12 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 // window.addEventListener("scroll", () => {
-//   const main = document.getElementsByTagName("main");
 //   const header = document.getElementById("header");
-//   if (main.scrollY > 50) {
-//     header.style.backgroundColor = "#121212";
+
+//   if (window.scrollY > 50) {
+//     // header.style.backgroundColor = "#33363A2";
+//     header.style.backgroundColor = "#121212"; //#121212
 //   } else {
-//     header.style.backgroundColor = "#33363A2";
+//     // header.style.backgroundColor = "#121212"; //#121212
 //   }
 // });
