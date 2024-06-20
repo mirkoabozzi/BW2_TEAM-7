@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 singer.textContent = album.artist.name;
                  singer.classList.add('text-center', 'text-white', 'fs-6', 'text-secondary', 'singerSearch');
                  singer.addEventListener('click', function () {
-                    window.location.href = `artist.html?id=${album.artist.id}`;  
+                    window.location.href = `artist.html?name=${album.artist.name}`;  
                  })
                 
                 col.appendChild(img);

@@ -91,21 +91,14 @@ svg:hover {
 
 table{
     background-color: $table-bg;
-    
- .row-bg:hover {
-     background-color: #2F2F2F;
-     cursor: pointer;
- }
-
-
-  .row-bg:hover {
-    
-        background-color: gray;
-       
-       cursor: pointer;
-        }
-   
 }
+
+  .table-hover>tbody>tr:hover>* {
+
+      background-color: rgba(61, 61, 61, 0.233);
+
+      cursor: pointer;
+  }
 
 .svgPlay {
       display: none;

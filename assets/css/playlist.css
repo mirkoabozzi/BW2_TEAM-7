@@ -12032,12 +12032,9 @@ svg:hover {
 table {
   background-color: black;
 }
-table .row-bg:hover {
-  background-color: #2F2F2F;
-  cursor: pointer;
-}
-table .row-bg:hover {
-  background-color: gray;
+
+.table-hover > tbody > tr:hover > * {
+  background-color: rgba(61, 61, 61, 0.233);
   cursor: pointer;
 }
 
