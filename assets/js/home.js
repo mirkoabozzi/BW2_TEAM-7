@@ -64,7 +64,7 @@ fetchAlbum = async (albumUrl, options, row) => {
     col.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
 
     col.addEventListener("click", () => {
-      window.location.assign("./album.html?spotifyId=" + album.id);
+      window.location.assign("./album.html?spotifyId=" + albums[index].id);
     });
     console.log(album.id);
     // if (index === 5) {
