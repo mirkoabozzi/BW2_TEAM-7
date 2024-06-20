@@ -218,7 +218,7 @@ fetchSong = async (url, options, row) => {
     artist.innerText = song.artist.name;
 
     const title = document.createElement("p");
-    title.classList.add("card-text", "text-truncate");
+    title.classList.add("card-text", "text-truncate", "songTitle");
     title.innerText = song.title;
 
     const playBtn = document.createElement("button");
@@ -496,7 +496,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "b9eade08ffmshc181240ed36d6a3p114651jsn1ec062420e35",
+      //"x-rapidapi-key": "b9eade08ffmshc181240ed36d6a3p114651jsn1ec062420e35",
+      "x-rapidapi-key": "be29d4589emsh96ee0928a35a02ep12baa6jsn9ac3ed7f6b27",
+      
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     },
   };
