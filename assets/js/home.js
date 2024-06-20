@@ -496,7 +496,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "b9eade08ffmshc181240ed36d6a3p114651jsn1ec062420e35",
+      "x-rapidapi-key": token,
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     },
   };
@@ -512,13 +512,20 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// window.addEventListener("scroll", () => {
-//   const header = document.getElementById("header");
+const main = document.getElementById("main");
+main.addEventListener("scroll", (e) => {
+  const header = document.getElementById("header");
+  // console.log(e.target.scrollTop);
 
-//   if (window.scrollY > 50) {
-//     // header.style.backgroundColor = "#33363A2";
-//     header.style.backgroundColor = "#121212"; //#121212
-//   } else {
-//     // header.style.backgroundColor = "#121212"; //#121212
-//   }
-// });
+  if (e.target.scrollTop > 50) {
+    // header.style.backgroundColor = "#121212"; //"#33363A2"
+    // console.log("if");
+    // header.style.backgroundColor = "#121212"; //#121212
+
+    header.classList.add("active");
+  } else {
+    // header.style.backgroundColor = "#33363A2"; //#121212
+    // console.log("else");
+    header.classList.remove("active");
+  }
+});
