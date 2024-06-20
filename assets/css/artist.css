@@ -12024,20 +12024,14 @@ svg:hover {
 .container-genres .img-container {
   padding: 10px;
 }
-.container-genres #playlist-container p {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  text-align: center;
-}
 .container-genres .img-container img {
-  width: 100%;
+  width: 90%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
 }
 
-.singerSearch {
-  cursor: pointer;
-  margin-top: -15px;
-}/*# sourceMappingURL=search.css.map */
+#artist-name {
+  font-size: 6rem;
+}/*# sourceMappingURL=artist.css.map */

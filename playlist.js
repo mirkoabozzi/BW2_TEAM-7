@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const playlistId = urlParams.get('id');
+    const playlistImg = urlParams.get('img');
 
     const url = `https://deezerdevs-deezer.p.rapidapi.com/playlist/${playlistId}`;
     const options = {
@@ -15,12 +16,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch(url, options);
         const result = await response.json();
 
-        const playlistImage = document.querySelector('.playlist-image');
-        const coverImg = document.createElement('img');
-        coverImg.src = result.picture_medium;
-        coverImg.style.width = "180px";
-        coverImg.classList.add('img-fluid', 'rounded-2');
-        playlistImage.appendChild(coverImg);
+
+
+
+        const playlistCover = document.getElementById("img-playlist");
+        if (playlistCover)
+            playlistCover.src = playlistImg;
+
+        
+        playlistCover.classList.add('img-fluid', 'rounded'); 
+        playlistCover.addEventListener('click', function () {
+            window.location.href = `artist.html?id=${artistId}`;
+        })
+
+    // Personalizza ulteriormente le dimensioni e altri stili se necessario
+    playlistCover.style.maxWidth = '13rem'; // Imposta larghezza massima
+        playlistCover.style.borderRadius = '10px';
+        
+        
 
         const playlistName = document.getElementById('playlist-name');
         playlistName.textContent = result.title;
