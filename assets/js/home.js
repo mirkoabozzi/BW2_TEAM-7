@@ -9,8 +9,9 @@ const url8 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=purple_disco_mac
 const url9 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=avicii";
 const url10 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=robbie_rivera";
 const url11 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=essed";
+const url12 = "https://deezerdevs-deezer.p.rapidapi.com/search?q=alesso";
 
-const artistArray = [url, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11];
+const artistArray = [url, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11, url12];
 
 const albumUrl = "https://deezerdevs-deezer.p.rapidapi.com/album/75621062";
 const albumUrl2 = "https://deezerdevs-deezer.p.rapidapi.com/album/299931";
@@ -323,7 +324,7 @@ fetchArtist = async (artistArray, options, row) => {
     const response = await fetch(artistArray[index], options);
     const currentArtist = await response.json();
 
-    console.log("currentArtiast", currentArtist);
+    // console.log("currentArtiast", currentArtist);
 
     const col = document.createElement("div");
     col.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
@@ -402,12 +403,12 @@ fetchArtist = async (artistArray, options, row) => {
   }
 };
 
-fetchArtist2 = async (artistArray, options, row) => {
-  for (let index = 5; index <= artistArray.length; index++) {
+fetchArtist2 = async (artistArray, options, row4) => {
+  for (let index = 6; index < artistArray.length; index++) {
     const response = await fetch(artistArray[index], options);
     const currentArtist = await response.json();
 
-    console.log("currentArtiast", currentArtist);
+    // console.log("currentArtiast", currentArtist);
 
     const col = document.createElement("div");
     col.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
