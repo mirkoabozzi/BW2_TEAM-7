@@ -116,7 +116,7 @@ fetchAlbum = async (albumUrl, options, row) => {
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
-    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.classList.add("playAlbum", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
@@ -223,7 +223,7 @@ fetchSong = async (url, options, row) => {
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
-    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.classList.add("playSong", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
@@ -298,7 +298,7 @@ fetchPlaylist = async (options) => {
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
-    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.classList.add("playPlaylist", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "bottom-0", "end-0", "d-none", "p-2");
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
@@ -382,7 +382,7 @@ fetchArtist = async (artistArray, options, row) => {
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
-    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.classList.add("playArtist", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
@@ -466,7 +466,7 @@ fetchArtist2 = async (artistArray, options, row4) => {
 
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
-    playBtn.classList.add("btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.classList.add("playArtist", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
@@ -512,13 +512,20 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// window.addEventListener("scroll", () => {
-//   const header = document.getElementById("header");
+const main = document.getElementById("main");
+main.addEventListener("scroll", (e) => {
+  const header = document.getElementById("header");
+  // console.log(e.target.scrollTop);
 
-//   if (window.scrollY > 50) {
-//     // header.style.backgroundColor = "#33363A2";
-//     header.style.backgroundColor = "#121212"; //#121212
-//   } else {
-//     // header.style.backgroundColor = "#121212"; //#121212
-//   }
-// });
+  if (e.target.scrollTop > 50) {
+    // header.style.backgroundColor = "#121212"; //"#33363A2"
+    // console.log("if");
+    // header.style.backgroundColor = "#121212"; //#121212
+
+    header.classList.add("active");
+  } else {
+    // header.style.backgroundColor = "#33363A2"; //#121212
+    // console.log("else");
+    header.classList.remove("active");
+  }
+});

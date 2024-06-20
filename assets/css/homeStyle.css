@@ -11961,12 +11961,16 @@ textarea.form-control-lg {
   }
 }
 svg {
-  fill: #A7A7A7;
+  fill: #a7a7a7;
 }
 
 body {
   font-family: "Circular";
   overflow-y: hidden;
+}
+
+#playBtn {
+  fill: black;
 }
 
 #main {
@@ -12003,5 +12007,10 @@ body {
   }
 }
 #header {
-  background-color: #33363A;
+  background-color: #121212;
+  transition: background-color 300ms;
+}
+#header.active {
+  background-color: #33363a;
+  transition: background-color 300ms;
 }/*# sourceMappingURL=homeStyle.css.map */
