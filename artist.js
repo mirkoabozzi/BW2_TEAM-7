@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const artistId = urlParams.get('id');
     const artistImg = urlParams.get('img');
 
-    const url = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`;
+    const url = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}/`;
     const options = {
         method: 'GET',
         headers: {
@@ -21,21 +21,39 @@ document.addEventListener("DOMContentLoaded", async () => {
         artistName.classList.add("fw-bold")
         artistName.textContent = result.name;
 
-        const artistImage = document.getElementsByClassName('container-image');
-        artistImageElement.src
-        
-    //  const artistName = data.album.artist.name;
-    //     const artistImgUrl = artistImg || data.picture_medium; 
-    //     const artistContainer = document.querySelector('#artist-img');
-    //     const artistImgElement = document.createElement('img');
-    //     artistImgElement.src = artistImgUrl;
-    //     artistImgElement.alt = artistName;
-    //     artistImgElement.classList.add('img-fluid', 'rounded');
-    //     artistContainer.appendChild(artistImgElement);
+       const artistImage = document.querySelector('.container-image');
 
-         } catch (error) {
+        if (artistImage) {
+            artistImage.style.backgroundImage = `url(${result.picture_xl})`;
+        } else {
+            console.error('elemento non trovato');
+        }
+
+        const tracklist = document.getElementById('tracklist');
+        tracklist.textContent = result.tracklist;
+       
+
+         
+        
+        const listners = document.getElementById("ascoltatori");
+        listners.textContent = result.nb_fan + " ascoltatori mensili";
+
+
+        //  const artistName = data.album.artist.name;
+        //     const artistImgUrl = artistImg || data.picture_medium; 
+        //     const artistContainer = document.querySelector('#artist-img');
+        //     const artistImgElement = document.createElement('img');
+        //     artistImgElement.src = artistImgUrl;
+        //     artistImgElement.alt = artistName;
+        //     artistImgElement.classList.add('img-fluid', 'rounded');
+        //     artistContainer.appendChild(artistImgElement);
+
+    } catch (error) {
         console.error('Errore', error);
     }
-});
 
+  
+
+    
+    });
 

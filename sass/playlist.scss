@@ -97,15 +97,14 @@ table{
      cursor: pointer;
  }
 
-  .row-bg {
-      transition: background-color 0.3s;
-  }
 
   .row-bg:hover {
-       background-color: $my-custom-table-hover-color;
+    
+        background-color: gray;
+       
        cursor: pointer;
-       /* Cambia il cursore al passaggio del mouse */
-   }
+        }
+   
 }
 
 .svgPlay {

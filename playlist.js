@@ -96,7 +96,7 @@ table.appendChild(thead);
 
 const tbody = document.createElement("tbody");
 
-result.tracks.data.forEach((element, index) => {
+    result.tracks.data.forEach((element, index) => {
     const row = document.createElement("tr");
     row.classList.add("row-bg");
 
@@ -121,14 +121,13 @@ result.tracks.data.forEach((element, index) => {
     row.appendChild(td4);
 
 
-    // Aggiungi la riga completa alla tbody della tabella
+
     tbody.appendChild(row);
 });
 
-// Aggiungi il tbody completo alla tabella
+
 table.appendChild(tbody);
 
-// Aggiungi la tabella completa al container desiderato nel tuo documento HTML
 songsContainer.appendChild(table);
 
         console.log("playlist", result);
