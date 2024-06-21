@@ -12008,4 +12008,8 @@ body {
 #header.active {
   background-color: #33363a;
   transition: background-color 300ms;
+}
+
+.hoverSvg:hover {
+  fill: white;
 }/*# sourceMappingURL=homeStyle.css.map */

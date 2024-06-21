@@ -49,3 +49,7 @@ body {
     transition: background-color 300ms;
   }
 }
+
+.hoverSvg:hover {
+  fill: white;
+}
