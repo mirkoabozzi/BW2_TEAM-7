@@ -14,9 +14,6 @@ svg {
     top: 135px;
 }
 
-#header {
-    top: 16px;
-}
 
 #socialContainer {
     top: 16px;
@@ -112,6 +109,20 @@ svg:hover {
     border: 0.5px solid white;
     font-weight: 700;
 }
+
+ .table-hover>tbody>tr:hover>* {
+
+     background-color: rgba(94, 94, 94, 0.233);
+
+     cursor: pointer;
+ }
+
+ th {
+    position: sticky;
+        padding: 10px;
+        top: 60px;
+    }
+ 
 
 
 
