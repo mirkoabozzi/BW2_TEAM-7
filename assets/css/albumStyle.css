@@ -11964,6 +11964,10 @@ svg {
   fill: #a7a7a7;
 }
 
+svg:hover {
+  fill: white;
+}
+
 #playBtn {
   fill: black;
 }
@@ -11995,7 +11999,7 @@ svg {
 }
 
 span {
-  color: grey;
+  color: #a7a7a7;
 }
 
 #library {

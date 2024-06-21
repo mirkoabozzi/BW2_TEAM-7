@@ -76,8 +76,8 @@ fetchAlbum = async (
                         />
                       </div>
                       <div class="ms-2">
-                        <p class="mb-0">
-                          ${album.artist.name} &bull; ${album.release_date} &bull; ${album.nb_tracks} brani,
+                        <p class="mb-0">  
+                          ${album.artist.name}  &bull; ${album.release_date} &bull; ${album.nb_tracks} brani,
                           <span>${album.duration} secondi</span>
                         </p>
                       </div>
