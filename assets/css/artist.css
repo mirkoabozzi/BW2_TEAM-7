@@ -11960,20 +11960,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-#playBtn {
-  fill: black;
-}
-
-#playMobile {
-  fill: white;
-}
-
 svg {
-  fill: #a7a7a7;
-}
-
-span {
-  color: #a7a7a7;
+  fill: #A7A7A7;
 }
 
 #homeContainer {

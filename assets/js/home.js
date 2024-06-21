@@ -117,7 +117,7 @@ fetchAlbum = async (albumUrl, options, row) => {
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
     playBtn.classList.add("playAlbum", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
-    playBtn.addEventListener("click", function(event) {
+    playBtn.addEventListener("click", function (event) {
       playCardAlbum(event, albums[index].id);
     });
 
@@ -227,7 +227,7 @@ fetchSong = async (url, options, row) => {
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
     playBtn.classList.add("playSong", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
-    playBtn.addEventListener("click", function(event) {
+    playBtn.addEventListener("click", function (event) {
       playCardSong(event, song.id);
     });
 
@@ -335,7 +335,7 @@ fetchArtist = async (artistArray, options, row) => {
     const response = await fetch(artistArray[index], options);
     const currentArtist = await response.json();
 
-    // console.log("currentArtiast", currentArtist);
+    console.log("currentArtiast", currentArtist);
 
     const col = document.createElement("div");
     col.classList.add("col-6", "col-md-4", "col-lg-3", "col-xl-2");
@@ -364,6 +364,11 @@ fetchArtist = async (artistArray, options, row) => {
     card.classList.add("border-0", "rounded");
     card.style.cursor = "pointer";
     // card.style.width = "180px";
+
+    card.addEventListener("click", function () {
+      window.location.assign("./artist.html?artistName=" + currentArtist.data[0].artist.name);
+    });
+    // console.log("NOMEEEE", currentArtist.data[0].artist.name);
 
     const divPic = document.createElement("div");
     divPic.classList.add("position-relative");
@@ -504,7 +509,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     headers: {
       //"x-rapidapi-key": "b9eade08ffmshc181240ed36d6a3p114651jsn1ec062420e35",
       "x-rapidapi-key": "be29d4589emsh96ee0928a35a02ep12baa6jsn9ac3ed7f6b27",
-      
+
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     },
   };
