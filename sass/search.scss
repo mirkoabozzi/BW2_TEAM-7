@@ -1,0 +1,102 @@
+@import "./partials/bootsrap-override";
+
+// homestyle.scss
+
+svg {
+    fill: #A7A7A7
+}
+
+#homeContainer {
+    top: 16px;
+}
+
+#libreryContainer {
+    top: 135px;
+}
+
+#header {
+    top: 16px;
+}
+
+#socialContainer {
+    top: 16px;
+}
+
+#main {
+    margin-bottom: 100px;
+    // height: 100vh;
+    overflow: auto;
+}
+
+// search.scss
+
+#input-search {
+    max-width: 35%;
+}
+
+#input-search:hover {
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .2)
+}
+
+#search-section {
+    .card-img-top {
+       cursor: pointer;
+    }
+
+    .card {
+        border: none;
+    }
+
+}
+
+.aside-search {
+    max-width: 6rem;
+    
+}
+
+#aside-scrollbar {
+    top: 135px;
+    min-height: 30vh;
+    max-height: 70vh;
+    overflow-y: auto;    
+}
+
+svg:hover {
+    fill: white;
+    cursor: pointer;
+}
+
+.hover-white:hover {
+ color: white;
+ cursor: pointer;
+}
+
+.container-genres{
+ .img-container {
+     padding: 10px;
+     
+     
+ }
+
+ #playlist-container p {
+     margin-top: 0.5rem;
+     font-weight: bold;
+     text-align: center;
+ }
+
+ .img-container img {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+     cursor: pointer;
+ }
+
+ 
+
+
+}
+
+.singerSearch{
+    cursor: pointer;
+    margin-top: -15px;
+ }
