@@ -11968,6 +11968,10 @@ svg {
   fill: black;
 }
 
+#playBtn {
+  fill: black;
+}
+
 #playMobile {
   fill: white;
 }

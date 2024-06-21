@@ -9,6 +9,9 @@ const currentSongImage = document.getElementById("currentSongImage");
 const currentSongArtist = document.getElementById("currentSongArtist");
 const currentSongTitle = document.getElementById("currentSongTitle");
 let currentTitle = "";
+const playAlbumBtn = document.getElementById("playAlbumBtn");
+const nextSongBtn =document.getElementById("nextSongBtn");
+const previousSongBtn =document.getElementById("previousSongBtn");
 
 const options = {
   method: "GET",
@@ -162,7 +165,6 @@ const searchSong = function (query) {
     });
 };
 
-
 const playCardSong = function (event, songId) {
   const button = event.currentTarget; // Ottieni il riferimento del bottone cliccato
   const closestCardTitle = button.closest(".col-6").querySelector(".songTitle");
@@ -191,18 +193,79 @@ const playCardSong = function (event, songId) {
   }
 };
 
-const searchAlbum = function (albumId) {
+const searchAlbum = function () {
+  const params = new URLSearchParams(window.location.search);
+  const albumId = params.get("spotifyId");
   const url = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
   return fetch(url, options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      return data.tracks.data; 
+      return data.tracks.data;
     })
     .catch((error) => {
       console.error("Errore nella ricerca dell'album", error);
     });
 };
+
+let currentTrackIndex = 0;
+let tracks = [];
+
+const playPauseAlbum = async function () {
+  try {
+    tracks = await searchAlbum();
+    if (tracks && tracks.length > 0) {
+      playTrack(currentTrackIndex);
+    }
+  } catch (error) {
+    console.error("Errore nella riproduzione dell'album", error);
+  }
+};
+
+const playTrack = (index) => {
+  if (index >= 0 && index < tracks.length) {
+    const track = tracks[index];
+    song.src = track.preview;
+    song.play();
+    currentSongTitle.textContent = track.title;
+    currentSongArtist.textContent = track.artist.name;
+    currentSongImage.src = track.album.cover_small;
+    playBtn.innerHTML=playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
+    <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
+    </path></svg>`;
+    playBtn.classList.remove("paused");
+    playBtn.classList.add("playing");
+
+    song.onended = () => {
+      currentTrackIndex++;
+      if (currentTrackIndex < tracks.length) {
+        playTrack(currentTrackIndex);
+      } else {
+        playBtn.classList.remove("playing");
+        playBtn.classList.add("paused");
+        playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
+          <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
+          </path></svg>`;
+      }
+    };
+  }
+};
+
+nextSongBtn.addEventListener("click", () => {
+  if (currentTrackIndex < tracks.length - 1) {
+    currentTrackIndex++;
+    playTrack(currentTrackIndex);
+  }
+});
+
+previousSongBtn.addEventListener("click", () => {
+  if (currentTrackIndex > 0) {
+    currentTrackIndex--;
+    playTrack(currentTrackIndex);
+  }
+});
+
+playAlbumBtn.addEventListener("click", playPauseAlbum);
 
 
 //PLAY SONG-------------------------------------
