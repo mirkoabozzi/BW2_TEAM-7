@@ -14,9 +14,6 @@ svg {
     top: 135px;
 }
 
-#header {
-    top: 16px;
-}
 
 #socialContainer {
     top: 16px;
@@ -73,9 +70,7 @@ svg:hover {
 // playlist.scss
 
 #main-playlist {
-//    .container-playlist {
-//     max-height: 20rem;
-//    }
+
 .play-playlist {
     fill: black;
     background-color: #1ED760;
@@ -91,14 +86,21 @@ svg:hover {
 
 table{
     background-color: $table-bg;
+    
+    
 }
 
   .table-hover>tbody>tr:hover>* {
-
-      background-color: rgba(61, 61, 61, 0.233);
-
+    background-color: rgba(94, 94, 94, 0.233);
       cursor: pointer;
   }
+
+  th {
+      position: sticky;
+      padding: 10px;
+      top: 60px;
+  }
+
 
 .svgPlay {
       display: none;

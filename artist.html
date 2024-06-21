@@ -549,7 +549,10 @@
                 <div class="col">
                   <div class="d-flex">
                     <div class="me-2 mt-1">
-                      <a href="./search.html" class="go-back">
+                      <button
+                        onclick="history.back()"
+                        class="bg-transparent border-0"
+                      >
                         <svg
                           class="border rounded-5 bg-black p-1"
                           data-encore-id="icon"
@@ -564,23 +567,28 @@
                             d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
                           ></path>
                         </svg>
-                      </a>
+                      </button>
                     </div>
                     <div class="ms-2 mt-1">
-                      <svg
-                        class="border rounded-5 bg-black p-1 me-3"
-                        data-encore-id="icon"
-                        role="img"
-                        aria-hidden="true"
-                        class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
-                        viewBox="0 0 16 16"
-                        width="30px"
-                        height="30px"
+                      <button
+                        onclick="history.forward()"
+                        class="bg-transparent border-0"
                       >
-                        <path
-                          d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
-                        ></path>
-                      </svg>
+                        <svg
+                          class="border rounded-5 bg-black p-1 me-3"
+                          data-encore-id="icon"
+                          role="img"
+                          aria-hidden="true"
+                          class="Svg-sc-ytk21e-0 cAMMLk IYDlXmBmmUKHveMzIPCF"
+                          viewBox="0 0 16 16"
+                          width="30px"
+                          height="30px"
+                        >
+                          <path
+                            d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+                          ></path>
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -629,7 +637,6 @@
           <main>
             <div class="container-image">
               <div id="artist-name" class="mx-3"></div>
-              <div id="ascoltatori" class="mt-5 mx-3">ascoltatori</div>
             </div>
             <div class="mt-4">
               <svg
@@ -664,20 +671,36 @@
               </svg>
             </div>
             <div class="mt-5 fs-5 fw-bold">Popolari</div>
-            <div class="mt-3">
-              <table class="table table-condensed table-dark">
+            <div class="mt-3" id="songs-album">
+              <!-- <table class="table table-condensed table-dark">
                 <thead>
                   <tr>
-                    <th>#</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th># <span class="ms-4">Titolo</span></th>
+                    <th>Album</th>
+                    <th>
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        viewBox="0 0 16 16"
+                        class="Svg-sc-ytk21e-0 dYnaPI"
+                        height="20px"
+                        width="20px"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 3.25a.75.75 0 0 1 .75.75v3.25H11a.75.75 0 0 1 0 1.5H7.25V4A.75.75 0 0 1 8 3.25z"
+                        ></path>
+                      </svg>
+                    </th>
                     <th></th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody id="table-content"></tbody>
-              </table>
+              </table> -->
             </div>
           </main>
         </div>
