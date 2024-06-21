@@ -1,7 +1,15 @@
 @import "./partials/bootsrap-override";
 
+span {
+  color: #a7a7a7;
+}
+
 svg {
   fill: #a7a7a7;
+}
+
+svg:hover {
+  fill: white;
 }
 
 #playBtn {
