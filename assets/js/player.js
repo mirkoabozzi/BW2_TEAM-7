@@ -1,5 +1,6 @@
 const progress = document.getElementById("progress-bar");
 const playBtn = document.getElementById("playBtn");
+const playMobileBtn = document.getElementById("playMobileBtn");
 const song = document.getElementById("song");
 const totDuration = document.getElementById("totDuration");
 const currentDuration = document.getElementById("currentDuration");
@@ -76,6 +77,7 @@ function durationConverter(duration) {
 }
 
 playBtn.addEventListener("click", playPause);
+playMobileBtn.addEventListener("click", playPause);
 
 // Evelent listeners per rilevare il dragging del mouse sulla barra
 let isProgressDragging = false;
@@ -114,6 +116,12 @@ song.addEventListener("ended", () => {
   playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
     <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
     </path></svg>`;
+  playMobileBtn.classList.remove("playing");
+  playMobileBtn.classList.add("paused");
+  playMobileBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
+    <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
+    </path></svg>`;
+    
 });
 
 //--------------------GESTIONE VOLUME BAR----------------------------------------
@@ -181,6 +189,11 @@ const playCardSong = function (event, songId) {
           </path></svg>`;
         playBtn.classList.remove("paused");
         playBtn.classList.add("playing");
+        playMobileBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI" style="fill:black;">
+          <path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z">
+          </path></svg>`;
+        playMobileBtn.classList.remove("paused");
+        playMobileBtn.classList.add("playing");
         currentSongTitle.textContent = songObj.title;
         currentSongArtist.textContent = songObj.artist.name;
         currentSongImage.src = songObj.album.cover_small;
