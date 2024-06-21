@@ -1,0 +1,128 @@
+@import "./partials/bootsrap-override";
+
+// homestyle.scss
+
+svg {
+    fill: #A7A7A7
+}
+
+#homeContainer {
+    top: 16px;
+}
+
+#libreryContainer {
+    top: 135px;
+}
+
+
+#socialContainer {
+    top: 16px;
+}
+
+#main {
+    margin-bottom: 100px;
+    // height: 100vh;
+    overflow: auto;
+}
+
+// search.scss
+
+#input-search {
+    max-width: 35%;
+}
+
+#input-search:hover {
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .2)
+}
+
+#search-section {
+    .card-img-top {
+        cursor: pointer;
+    }
+
+    .card {
+        border: none;
+    }
+
+}
+
+.aside-search {
+    max-width: 6rem;
+
+}
+
+#aside-scrollbar {
+    top: 135px;
+    min-height: 30vh;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+svg:hover {
+    fill: white;
+    cursor: pointer;
+}
+
+.hover-white:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.container-genres {
+    .img-container {
+        padding: 10px;
+    }
+
+    .img-container img {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+
+}
+
+// artist
+
+.container-image {
+    height: 30rem;
+    background-size: cover;
+    margin-top: 0;
+        background-position: center;
+    
+    
+
+    #artist-name {
+    font-size: 6rem;
+}
+
+}
+
+#iconPlay {
+    fill: #000;
+    background-color: #1ed760;
+    
+}
+
+#button-segui {
+    border: 0.5px solid white;
+    font-weight: 700;
+}
+
+ .table-hover>tbody>tr:hover>* {
+
+     background-color: rgba(94, 94, 94, 0.233);
+
+     cursor: pointer;
+ }
+
+ th {
+    position: sticky;
+        padding: 10px;
+        top: 60px;
+    }
+ 
+
+
+

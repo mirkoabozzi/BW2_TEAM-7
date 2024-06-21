@@ -26,10 +26,19 @@ svg {
 }
 
 #main {
+  max-height: 85vh;
   margin-bottom: 120px;
   overflow: auto;
 }
 
 span {
   color: grey;
+}
+
+#library {
+  max-height: 71vh;
+}
+
+body {
+  overflow-y: hidden;
 }

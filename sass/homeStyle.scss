@@ -1,59 +1,70 @@
 @import "./partials/bootsrap-override";
 
-svg{
-    fill:#A7A7A7
-    
-}
-
-body{
-    font-family: "Circular";
-    overflow-y: hidden;
+svg {
+  fill: #a7a7a7;
 }
 
 #playBtn {
+  fill: black;
+}
+
+#playMobile {
+  fill: white;
+}
+
+body {
+  font-family: "Circular";
+  overflow-y: hidden;
+}
+
+#main {
+  max-height: 85vh;
+  overflow: auto;
+  svg {
     fill: black;
   }
-
-#main{
-    margin-bottom: 120px;
-    max-height: 85vh;
-    overflow: auto;
-    svg{
-        fill:black
-    }
 }
-#library{
-    max-height: 71vh;
+#library {
+  max-height: 71vh;
 }
 
-
-@media (max-width: 1399px){
-    .hide-on-xl {
-        display: none;
-
-    }
+@media (max-width: 1399px) {
+  .hide-on-xl {
+    display: none;
+  }
 }
-@media screen and (max-width: 1199px){
-    .hide-on-lg {
-        display: none;
-    }
-   
+@media screen and (max-width: 1199px) {
+  .hide-on-lg {
+    display: none;
+  }
 }
-@media screen and (max-width: 991px){
-    .hide-on-md {
-        display: none;
-    }
-    
+@media screen and (max-width: 991px) {
+  .hide-on-md {
+    display: none;
+  }
 }
-@media screen and (max-width: 767px){
-    .hide-on-sm {
-        display: none;
-    }
+@media screen and (max-width: 767px) {
+  .hide-on-sm {
+    display: none;
+  }
 }
 
-
-#header{
- background-color: #33363A;
-//  background-color:#121212 ;
+#header {
+  background-color: #121212;
+  transition: background-color 300ms;
+  &.active {
+    background-color: #33363a;
+    transition: background-color 300ms;
+  }
 }
 
+.hoverSvg:hover {
+  fill: white;
+}
+
+.span {
+  color: #a7a7a7;
+}
+.span:hover {
+  color: white;
+}
