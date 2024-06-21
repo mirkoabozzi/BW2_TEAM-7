@@ -1,26 +1,70 @@
 @import "./partials/bootsrap-override";
 
-svg{
-    fill:#A7A7A7
-    
+svg {
+  fill: #a7a7a7;
 }
 
-#homeContainer{
-    top:16px;
-}
-#libreryContainer{
-    top: 135px;
-}
-#header{
-    top:16px;
+#playBtn {
+  fill: black;
 }
 
-#socialContainer{
-    top:16px;
+#playMobile {
+  fill: white;
 }
 
-#main{
-    margin-bottom: 100px;
-    // height: 100vh;
-    overflow: auto;
+body {
+  font-family: "Circular";
+  overflow-y: hidden;
+}
+
+#main {
+  max-height: 85vh;
+  overflow: auto;
+  svg {
+    fill: black;
+  }
+}
+#library {
+  max-height: 71vh;
+}
+
+@media (max-width: 1399px) {
+  .hide-on-xl {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .hide-on-lg {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hide-on-md {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hide-on-sm {
+    display: none;
+  }
+}
+
+#header {
+  background-color: #121212;
+  transition: background-color 300ms;
+  &.active {
+    background-color: #33363a;
+    transition: background-color 300ms;
+  }
+}
+
+.hoverSvg:hover {
+  fill: white;
+}
+
+.span {
+  color: #a7a7a7;
+}
+.span:hover {
+  color: white;
 }

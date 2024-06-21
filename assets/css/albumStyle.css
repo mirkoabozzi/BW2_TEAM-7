@@ -11972,60 +11972,36 @@ svg {
   fill: white;
 }
 
-body {
-  font-family: "Circular";
-  overflow-y: hidden;
+#homeContainer {
+  top: 16px;
+}
+
+#libreryContainer {
+  top: 135px;
+}
+
+#header {
+  top: 16px;
+}
+
+#socialContainer {
+  top: 16px;
 }
 
 #main {
   max-height: 85vh;
+  margin-bottom: 120px;
   overflow: auto;
 }
-#main svg {
-  fill: black;
+
+span {
+  color: grey;
 }
 
 #library {
   max-height: 71vh;
 }
 
-@media (max-width: 1399px) {
-  .hide-on-xl {
-    display: none;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .hide-on-lg {
-    display: none;
-  }
-}
-@media screen and (max-width: 991px) {
-  .hide-on-md {
-    display: none;
-  }
-}
-@media screen and (max-width: 767px) {
-  .hide-on-sm {
-    display: none;
-  }
-}
-#header {
-  background-color: #121212;
-  transition: background-color 300ms;
-}
-#header.active {
-  background-color: #33363a;
-  transition: background-color 300ms;
-}
-
-.hoverSvg:hover {
-  fill: white;
-}
-
-.span {
-  color: #a7a7a7;
-}
-
-.span:hover {
-  color: white;
-}/*# sourceMappingURL=homeStyle.css.map */
+body {
+  overflow-y: hidden;
+}/*# sourceMappingURL=albumStyle.css.map */
