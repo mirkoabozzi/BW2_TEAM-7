@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     };
 
-    
-
-    
 
     const playlistContainer = document.getElementById('playlist-container');
 
@@ -43,17 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error(error);
     }
      
-    // const clickedPlaylist = new URLSearchParams(window.location.search).get("id");
-     
-    // fetch(url + clickedPlaylist, {
-    //    headers: {
-    //         'x-rapidapi-key':  '080c04199dmsh0a412dd991409a2p1ad76fjsn2f37e6874b74',
-    //         'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com'
-    //     }
-
-        
-    //     })
-    // .then(response => response.json())
+    
 
 
 // funzione per ricerca
@@ -103,11 +90,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 title.textContent = album.title;
                  title.classList.add('text-center', 'text-white', 'fs-4', 'fw-bold');
                  
-                const singer = document.createElement('p');
-                singer.textContent = album.artist.name;
+                 const singer = document.createElement('p');
+                 singer.textContent = album.artist.name;
                  singer.classList.add('text-center', 'text-white', 'fs-6', 'text-secondary', 'singerSearch');
                  singer.addEventListener('click', function () {
-                    window.location.href = `artist.html?name=${album.artist.name}`;  
+                 window.location.href = `artist.html?name=${album.artist.name}`;  
                  })
                 
                 col.appendChild(img);

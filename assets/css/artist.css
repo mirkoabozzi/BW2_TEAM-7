@@ -12031,10 +12031,6 @@ svg:hover {
   cursor: pointer;
 }
 
-body {
-  overflow: hidden;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
   background-color: #121212;
