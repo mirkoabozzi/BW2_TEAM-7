@@ -12,6 +12,7 @@ let currentTitle = "";
 const playAlbumBtn = document.getElementById("playAlbumBtn");
 const nextSongBtn =document.getElementById("nextSongBtn");
 const previousSongBtn =document.getElementById("previousSongBtn");
+const casualBtn =document.getElementById("casualBtn")
 
 const options = {
   method: "GET",
