@@ -11989,6 +11989,9 @@ svg {
   box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.2);
 }
 
+#search-section {
+  max-height: calc(100vh - 200px);
+}
 #search-section .card-img-top {
   cursor: pointer;
 }
@@ -12014,6 +12017,17 @@ svg:hover {
 .hover-white:hover {
   color: white;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.2745098039);
 }
 
 #main-playlist .play-playlist {
@@ -12046,4 +12060,78 @@ th {
 
 #img-playlist {
   left: 20px;
+}
+
+@media (max-width: 1399px) {
+  .hide-on-xl {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .hide-on-lg {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hide-on-md {
+    display: none;
+  }
+  .playerBottom {
+    position: fixed;
+    padding-bottom: 3rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hide-on-sm {
+    display: none;
+  }
+  #input-search {
+    width: 300px;
+  }
+  #aside-scrollbar,
+  #homeContainer,
+  #socialContainer {
+    display: none;
+  }
+  .iconLibrary {
+    display: block;
+  }
+  .ms-2 > p {
+    display: none;
+  }
+}
+#header {
+  background-color: #121212;
+  transition: background-color 300ms;
+}
+#header.active {
+  background-color: #33363a;
+  transition: background-color 300ms;
+}
+
+.hoverSvg:hover {
+  fill: white;
+}
+
+.span {
+  color: #a7a7a7;
+}
+
+.span:hover {
+  color: white;
+}
+
+.playerBottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+}
+
+#mobileContainer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
 }/*# sourceMappingURL=playlist.css.map */
