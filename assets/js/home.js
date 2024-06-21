@@ -117,6 +117,9 @@ fetchAlbum = async (albumUrl, options, row) => {
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
     playBtn.classList.add("playAlbum", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.addEventListener("click", function(event) {
+      playCardAlbum(event, albums[index].id);
+    });
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
@@ -224,6 +227,9 @@ fetchSong = async (url, options, row) => {
     const playBtn = document.createElement("button");
     playBtn.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="20px" heigth="20px" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>`;
     playBtn.classList.add("playSong", "btn", "rounded-circle", "bg-success", "d-flex", "justify-content-center", "align-items-center", "position-absolute", "bottom-0", "end-0", "d-none", "p-2");
+    playBtn.addEventListener("click", function(event) {
+      playCardSong(event, song.id);
+    });
 
     col.addEventListener("mouseover", (e) => {
       playBtn.classList.remove("d-none");
